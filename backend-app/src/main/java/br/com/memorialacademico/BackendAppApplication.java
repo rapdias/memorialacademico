@@ -7,7 +7,6 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Import;
 
 @SpringBootApplication
-//@Import({CustomWebSecurityConfigurerAdapter.class})
 public class BackendAppApplication extends SpringBootServletInitializer
 {
 	@Override

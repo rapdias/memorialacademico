@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="pull-right">Número de visitas: <span style="font-weight: bold;">{{main.visitantes}}</span></div>
+  <div class="page-header" style="margin-top: 0px;">
+    <h1>Memorial Acadêmico <br/>
+      <small>Um portal único para a consulta e download de memoriais</small>
+    </h1>
+  </div>
+
+  <div class="col-sm-5">
+    <span style="font-size: 1.3em;">Total de Memoriais: </span>
+    <span style="font-size: 1.3em; color: blue">{{main.listaNomesRemote.length}}</span>
+  </div>
+
+  <div class="col-sm-7">
+    <form class="form-horizontal">
+      <label for="buscaPorNome" class="col-sm-5 control-label">Busca por nome:</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="buscaPorNome" placeholder="Busca..." ng-model="main.busca.name">
+        <div class="pull-right text-muted">
+          <button class="btn btn-link" style="padding: 0; margin: 0;" ng-click="main.busca.name = ''">Limpar Busca</button>
+
+        </div>
+      </div>
+
+    </form>
+  </div>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <div class="row">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Lista de Nomes</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <li style="font-size: 1.2em; padding: 5px 0;"
+              ng-repeat="indicado in main.listaNomesRemote | orderBy:'name' | filter: main.busca">
+            <a ui-sref="detail({id: indicado.id, name: indicado.name, file: indicado.fileLink, year: indicado.year})" target="_blank" class="btn btn-link">{{indicado.name | uppercase}}</a>
+            <br />
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+</div>
+

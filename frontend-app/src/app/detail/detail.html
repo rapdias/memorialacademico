@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="page-header" style="margin-top: 0px;">
+    <h1>Detalhes<br />
+      <small>Veja detalhes disponíveis e faça download do memorial</small>
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{detail.name}}
+        </h3>
+      </div>
+      <div class="panel-body" style="font-size:1.2em;">
+        <div>Ano: {{detail.year}}</div>
+        <br />
+        <a href="http://memorialacademico.com.br/files/{{detail.file}}">
+          <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+            Baixar Memorial</a>
+      </div>
+    </div>
+
+  </div>
+</div>

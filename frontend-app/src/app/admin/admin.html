@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="page-header" style="margin-top: 0px;">
+    <h1>Administrador <br />
+      <small>Página de acesso exclusivo do administrador</small>
+    </h1>
+  </div>
+
+  <div class="row">
+    <form class="form-horizontal" ng-show="true">
+      <div class="form-group">
+        <label for="inputUsername" class="col-sm-2 control-label" >Nome:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="inputUsername" placeholder="Usuário..." ng-model="main.formUsername">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label" >Email:</label>
+        <div class="col-sm-6">
+          <input type="email" class="form-control" id="inputPassword" placeholder="Email" ng-model="main.formPassword">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-6">
+          <button ng-click="main.formSendDetails(main.formName, main.formEmail, main.formMessage, main.formJournal)" class="btn btn-default">Acessar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="row">
+
+    <div class="panel panel-default" ng-show="true">
+      <div class="panel-heading">
+        <h3 class="panel-title">Lista de Mensagens</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <li style="font-size: 1.2em; padding: 5px 0;" ng-repeat="mes in main.messages">
+              <h4>{{mes.name}}</h4>
+              <h5>{{mes.email}}</h5>
+              <p>{{mes.message}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+</div>
